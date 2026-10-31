@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blox Fruits Wiki FR — Encyclopédie</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+ <div class="topline"><div><div class="logo">🌊 BLOX <span>FRUITS WIKI</span></div><div class="sub">Encyclopédie de fan en français • Guide des fruits</div></div><span class="pill">VERSION PERSONNELLE</span></div>
+ <nav>
+  <button class="tab active" data-view="home">⌂ Accueil</button>
+  <button class="tab" data-view="catalog">🍈 Fruits</button>
+  <button class="tab" data-view="guides">📚 Guides</button>
+  <button class="tab" data-view="glossary">📖 Comprendre le jeu</button>
+  <button class="tab" data-view="about">ℹ️ Sources & limites</button>
+ </nav>
+</header>
+<main>
+<section class="view active" id="home">
+ <div class="hero"><div class="eyebrow">TON ENCYCLOPÉDIE DE BLOX FRUITS</div><h1>Trouve ton prochain <span>fruit principal.</span></h1><p>Recherche un fruit, compare son type et sa rareté, consulte les maîtrises, les attaques connues et les guides d'éveil. Les valeurs susceptibles de changer sont signalées pour éviter les informations inventées.</p><div class="actions"><button class="btn primary" onclick="showView('catalog')">Explorer les fruits →</button><button class="btn" onclick="showView('guides')">Voir les guides</button></div></div>
+ <div class="stats"><div class="stat"><strong id="activeCount">42</strong><small>Fruits jouables listés dans cette base</small></div><div class="stat"><strong>3</strong><small>Familles : Naturel, Élémentaire, Bête</small></div><div class="stat"><strong>1 fichier</strong><small>Fonctionne localement dans ChromeOS</small></div></div>
+ <div class="section-head"><div><h2>Fruits populaires</h2><div class="muted">Clique sur une carte pour ouvrir sa fiche.</div></div><button class="btn" onclick="showView('catalog')">Tout voir</button></div><div class="grid" id="featured"></div>
+ <div class="notice">Important : les attaques, maîtrises et conditions peuvent changer après une mise à jour. Les fiches sans données vérifiées affichent « à vérifier » au lieu de fabriquer une valeur.</div>
+</section>
+<section class="view" id="catalog">
+ <div class="section-head"><div><h1>Catalogue des fruits</h1><p class="muted">Filtre par nom, rareté ou type.</p></div></div>
+ <div class="toolbar"><input class="field" id="search" placeholder="🔎 Chercher Dough, Phoenix, Dragon…"><select class="field" id="sort"><option value="name">Trier : nom A–Z</option><option value="priceDesc">Prix : plus cher</option><option value="priceAsc">Prix : moins cher</option></select></div>
+ <div class="chips" id="rarityChips"></div><div class="chips" id="typeChips"></div><div class="muted" id="resultCount"></div><div class="grid" id="fruitGrid"></div>
+ <div class="section-head"><div><h2>Fruits retirés / anciens noms</h2><p class="muted">Conservés à part pour éviter de les confondre avec le catalogue actuel.</p></div></div><div class="grid" id="legacyGrid"></div>
+</section>
+<section class="view" id="detail"><button class="btn" onclick="showView('catalog')">← Retour au catalogue</button><div id="detailContent"></div></section>
+<section class="view" id="guides">
+ <div class="hero"><div class="eyebrow">PROGRESSION</div><h1>Guides de <span>fruits & éveils</span></h1><p>Les éveils ne sont pas disponibles pour tous les fruits. Les guides sont séparés des simples niveaux de maîtrise.</p></div>
+ <div class="guidegrid" id="guideGrid"></div><div id="guideDetail" class="box hidden"></div>
+</section>
+<section class="view" id="glossary">
+ <h1>📖 Comprendre les fiches</h1>
+ <div class="two">
+  <div class="box"><h3>Mastery / Maîtrise</h3><p class="muted">La maîtrise progresse en utilisant le fruit et en battant des ennemis. Elle débloque les attaques à des seuils propres à chaque fruit. Le niveau requis doit être vérifié sur la fiche actuelle.</p></div>
+  <div class="box"><h3>Éveil / V2</h3><p class="muted">Certains fruits peuvent être éveillés via des raids. L'éveil améliore des capacités en échange de fragments. Tous les fruits n'ont pas d'éveil classique.</p></div>
+  <div class="box"><h3>Type</h3><p class="muted"><b>Naturel :</b> capacités variées. <b>Élémentaire :</b> pouvoirs élémentaires et passifs spécifiques. <b>Bête :</b> transformations ou formes animales.</p></div>
+  <div class="box"><h3>Prix</h3><p class="muted">Le prix Beli et le prix Robux sont différents. Les valeurs de trading entre joueurs ne sont pas le prix du Dealer et peuvent changer.</p></div>
+ </div>
+</section>
+<section class="view" id="about">
+ <h1>ℹ️ Sources & limites</h1>
+ <div class="box"><p>Cette page est un projet de fan, non affilié à Roblox ou aux créateurs de Blox Fruits. Le code fonctionne sans serveur et n'envoie aucune donnée.</p><p>La base ci-dessous reprend une liste communautaire des fruits, types, raretés et prix de référence. Les attaques et conditions exactes sont renseignées lorsqu'elles sont disponibles dans cette version ; les autres champs sont explicitement signalés.</p><p class="links">Références à consulter pour vérifier les changements :</p><ul class="links"><li><a href="https://bffr.fr/wiki/fruits" target="_blank" rel="noopener">Wiki Blox Fruits FR — catalogue des fruits</a></li><li><a href="https://bffr.fr/wiki/" target="_blank" rel="noopener">Wiki communautaire Blox Fruits FR</a></li><li><a href="https://blox-fruits.fandom.com/wiki/Blox_Fruits_Wiki" target="_blank" rel="noopener">Wiki communautaire anglophone</a></li></ul><div class="notice">Les prix et raretés sont des données de référence, pas une garantie de stock actuel. Les données de combat doivent être revérifiées après les mises à jour.</div></div>
+</section>
+</main>
+<footer class="footer">Blox Fruits Wiki FR — projet personnel de fan • Non officiel • Vérifie les valeurs dans le jeu</footer>
+<script defer src="data.js"></script>
+<script defer src="app.js"></script>
+<script defer src="shop.js"></script>
+</body>
+</html>
